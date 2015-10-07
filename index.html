@@ -39,13 +39,33 @@
   <script>
   $(function() {
     $(document).on("click",function (e) {
+      console.log(e.target.id);
        if (e.target.id=="sign-in") {
          $("#sign-in-form").show();
-       }
-       else if ($("#sign-in-form").is(":visible") && $("#sign-in-form").has(e.target).length === 0) {
+       } else if (e.target.id=="sign-up") {
          $("#sign-in-form").hide();
+         $("#sign-up-form").show();
+       } else if (e.target.id=="sign-up-button") {
+         $("#sign-in-form").hide();
+         $("#sign-up-form").show();
+       }
+       else if (e.target.id=="forgot-password") {
+         $("#sign-in-form").hide();
+         $("#forgot-password-form").show();
+       }
+       else if ($("#sign-in-form").is(":visible") && $("#sign-in-form").has(e.target).length === 0 ||
+                $("#sign-up-form").is(":visible") && $("#sign-up-form").has(e.target).length === 0 ||
+                $("#forgot-password-form").is(":visible") && $("#forgot-password-form").has(e.target).length === 0) {
+         $("#sign-in-form").hide();
+         $("#sign-up-form").hide();
+         $("#forgot-password-form").hide();
+
        } else if (e.target.id =="sign-in-button") {
          $("#sign-in-form").hide();
+       } else if (e.target.id =="create-account-button") {
+         $("#sign-up-form").hide();
+       } else if (e.target.id =="recover-password-button") {
+         $("#forgot-password-form").hide();
        }
     });
   });
@@ -96,11 +116,11 @@
     <div class="mdl-card__supporting-text">
       <form action="#">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="username" />
+          <input class="mdl-textfield__input" type="text" id="email" required/>
           <label class="mdl-textfield__label" for="sample3">Email</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="password" id="password" />
+          <input class="mdl-textfield__input" type="password" id="password" required/>
           <label class="mdl-textfield__label" for="sample3">Password</label>
         </div>
         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
@@ -111,16 +131,92 @@
     </div>
     <div class="mdl-card__actions mdl-card--border">
       <div class="action-part">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color: #4a6bd6">
+        <a href="#" id="forgot-password" class="mdl-button mdl-button--colored mdl-js-button" style="color: #4a6bd6">
           Forgot password?
         </a>
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color: #4a6bd6">
+        <a href="#" id="sign-up" class="mdl-button mdl-button--colored mdl-js-button" style="color: #4a6bd6">
           Create Account
         </a>
       </div>
       <div class="action-part">
-        <a id="sign-in-button" class="mdl-button snap-button snap-button--filled">
+        <a href="#" id="sign-in-button" class="mdl-button snap-button snap-button--filled">
           Sign in
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div id="sign-up-form" class="snap-sign-up">
+    <div class="snap-sign-up-card mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <div class="title-part">
+        <i class="material-icons" style="font-size: 8rem">account_circle</i>
+      </div>
+      <div class="title-part">
+        <h2 class="mdl-card__title-text" style="display: block">Create Account</h2>
+      </div>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="username" required/>
+          <label class="mdl-textfield__label" for="sample3">Username</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="email" required/>
+          <label class="mdl-textfield__label" for="sample3">Email</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" id="password" required/>
+          <label class="mdl-textfield__label" for="sample3">Password</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" id="password" required/>
+          <label class="mdl-textfield__label" for="sample3">Confirm Password</label>
+        </div>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+          <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" />
+          <span class="mdl-checkbox__label">Remember Me</span>
+        </label>
+      </form>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <div class="action-part">
+        <a id="create-account-button" class="mdl-button snap-button snap-button--filled">
+          Create Account
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div id="forgot-password-form" class="snap-forgot-password">
+    <div class="snap-forgot-password-card mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <div class="title-part">
+        <i class="material-icons" style="font-size: 8rem">lock</i>
+      </div>
+      <div class="title-part">
+        <h2 class="mdl-card__title-text" style="display: block">Recover Password</h2>
+      </div>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="username" required/>
+          <label class="mdl-textfield__label" for="sample3">Username</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="email" required/>
+          <label class="mdl-textfield__label" for="sample3">Email</label>
+        </div>
+      </form>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <div class="action-part">
+        <a id="recover-password-button" class="mdl-button snap-button snap-button--filled">
+          Recover Password
         </a>
       </div>
     </div>
