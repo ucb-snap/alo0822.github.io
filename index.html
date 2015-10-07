@@ -42,7 +42,9 @@
        if (e.target.id=="sign-in") {
          $("#sign-in-form").show();
        }
-       else if ($("#sign-in-form").is(":visible")) {
+       else if ($("#sign-in-form").is(":visible") && $("#sign-in-form").has(e.target).length === 0) {
+         $("#sign-in-form").hide();
+       } else if (e.target.id =="sign-in-button") {
          $("#sign-in-form").hide();
        }
     });
@@ -117,7 +119,7 @@
         </a>
       </div>
       <div class="action-part">
-        <a class="mdl-button snap-button snap-button--filled">
+        <a id="sign-in-button" class="mdl-button snap-button snap-button--filled">
           Sign in
         </a>
       </div>
