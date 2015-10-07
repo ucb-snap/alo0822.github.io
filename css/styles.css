@@ -85,7 +85,7 @@ a img{
   background: #4a6bd6;
 }
   .snap-button--filled:hover {
-    background-color: #4a6bd6; 
+    background-color: #4a6bd6;
     opacity: 0.85;
   }
 
@@ -113,6 +113,7 @@ a img{
 
   .snap-navigation-container {
     /* Simple hack to make the overflow happen to the left instead... */
+    display: inline-block;
     direction: ltr;
     order: 1;
     width: 500px;
@@ -191,7 +192,7 @@ a img{
   margin-top: 3em;
 }
   .snap-try-button:hover {
-    background-color: #4a6bd6; 
+    background-color: #4a6bd6;
     opacity: 1;
   }
 

@@ -43,25 +43,26 @@
       <div class="snap-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row snap-layout-header-row">
           <span class="snap-title mdl-layout-title">
-            <img class="snap-logo-image" src="images/snap-logo.png">
+            <a href="index.html"><img class="snap-logo-image" src="images/snap-logo.png"></a>
+            <div class="snap-navigation-container">
+              <nav class="snap-navigation mdl-navigation">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://snap.berkeley.edu/run">Run</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Community</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Extensions</a>
+
+              <div class="snap-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+                <label class="mdl-button mdl-js-button mdl-button--icon snap-search-icon-size" for="search-field">
+                  <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                  <input class="mdl-textfield__input" type="text" id="search-field" />
+                </div>
+              </div>
+              </nav>
+            </div>
           </span>
 
-          <div class="snap-navigation-container">
-            <nav class="snap-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Run</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Community</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Extensions</a>
 
-            <div class="snap-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-              <label class="mdl-button mdl-js-button mdl-button--icon snap-search-icon-size" for="search-field">
-                <i class="material-icons">search</i>
-              </label>
-              <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" id="search-field" />
-              </div>
-            </div>
-            </nav>
-          </div>  
            <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-button snap-button snap-button--filled" href="">Sign In</a>
