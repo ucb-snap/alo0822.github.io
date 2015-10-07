@@ -22,6 +22,8 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick-1.5.7/slick/slick.min.js"></script>
     <script type="text/javascript" src="js/my-slick.js"></script>
+    <script type="text/javascript" src="js/snap-scripts.js"></script>
+
 
     <style>
     #view-source {
@@ -34,42 +36,8 @@
       z-index: 900;
     }
     </style>
-
   </head>
-  <script>
-  $(function() {
-    $(document).on("click",function (e) {
-      console.log(e.target.id);
-       if (e.target.id=="sign-in") {
-         $("#sign-in-form").show();
-       } else if (e.target.id=="sign-up") {
-         $("#sign-in-form").hide();
-         $("#sign-up-form").show();
-       } else if (e.target.id=="sign-up-button") {
-         $("#sign-in-form").hide();
-         $("#sign-up-form").show();
-       }
-       else if (e.target.id=="forgot-password") {
-         $("#sign-in-form").hide();
-         $("#forgot-password-form").show();
-       }
-       else if ($("#sign-in-form").is(":visible") && $("#sign-in-form").has(e.target).length === 0 ||
-                $("#sign-up-form").is(":visible") && $("#sign-up-form").has(e.target).length === 0 ||
-                $("#forgot-password-form").is(":visible") && $("#forgot-password-form").has(e.target).length === 0) {
-         $("#sign-in-form").hide();
-         $("#sign-up-form").hide();
-         $("#forgot-password-form").hide();
 
-       } else if (e.target.id =="sign-in-button") {
-         $("#sign-in-form").hide();
-       } else if (e.target.id =="create-account-button") {
-         $("#sign-up-form").hide();
-       } else if (e.target.id =="recover-password-button") {
-         $("#forgot-password-form").hide();
-       }
-    });
-  });
-  </script>
   <body bgcolor="#fbfbfb">
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -94,49 +62,44 @@
               </nav>
             </div>
           </span>
-
-
            <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="mdl-layout-spacer"></div>
-          <a id="sign-in" class="mdl-button snap-button snap-button--filled" href="#">Sign In</a>
+          <a id="sign-in" class="mdl-button snap-button snap-button--filled" href="#">Sign in</a>
         </div>
       </div>
     </div>
+
 
   <div id="sign-in-form" class="snap-sign-in">
     <div class="snap-sign-in-card mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title">
       <div class="title-part">
-        <i class="material-icons" style="font-size: 8rem">account_circle</i>
+        <i class="material-icons" style="font-size: 5rem; padding-top: 20px; color: #3a3d3f">account_circle</i>
       </div>
       <div class="title-part">
-        <h2 class="mdl-card__title-text" style="display: block">Sign In</h2>
+        <h2 class="mdl-card__title-text" style="display: block; color: #3a3d3f">Sign In</h2>
       </div>
     </div>
-    <div class="mdl-card__supporting-text">
+    <div class="mdl-card__supporting-text" style="padding-top:10px; padding-bottom:25px">
       <form action="#">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="email" required/>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-bottom: 15px">
+          <input class="mdl-textfield__input" type="text" id="email"/>
           <label class="mdl-textfield__label" for="sample3">Email</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="password" id="password" required/>
+          <input class="mdl-textfield__input" type="password" id="password"/>
           <label class="mdl-textfield__label" for="sample3">Password</label>
         </div>
         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
           <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" />
-          <span class="mdl-checkbox__label">Remember Me</span>
+          <span class="mdl-checkbox__label" style="font-size:12px">Remember me</span>
         </label>
       </form>
     </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <div class="action-part">
-        <a href="#" id="forgot-password" class="mdl-button mdl-button--colored mdl-js-button" style="color: #4a6bd6">
-          Forgot password?
-        </a>
-        <a href="#" id="sign-up" class="mdl-button mdl-button--colored mdl-js-button" style="color: #4a6bd6">
-          Create Account
-        </a>
+    <div class="mdl-card__actions mdl-card--border" style="padding:16px">
+      <div class="action-part" style="padding-bottom:25px">
+        <a href="#" id="forgot-password" class="snap-sign-in-link" style="padding-right:10px">Forgot password?</a>
+        <a href="#" id="sign-up" class="snap-sign-in-link" style="padding-left:10px">Create Account</a>
       </div>
       <div class="action-part">
         <a href="#" id="sign-in-button" class="mdl-button snap-button snap-button--filled">
@@ -151,39 +114,39 @@
     <div class="snap-sign-up-card mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title">
       <div class="title-part">
-        <i class="material-icons" style="font-size: 8rem">account_circle</i>
+        <i class="material-icons" style="font-size: 5rem; padding-top: 20px; color: #3a3d3f">account_circle</i>
       </div>
       <div class="title-part">
-        <h2 class="mdl-card__title-text" style="display: block">Create Account</h2>
+        <h2 class="mdl-card__title-text" style="display: block; color: #3a3d3f">Create Account</h2>
       </div>
     </div>
-    <div class="mdl-card__supporting-text">
+    <div class="mdl-card__supporting-text" style="padding-top:10px; padding-bottom:25px">
       <form action="#">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="username" required/>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-bottom: 15px">
+          <input class="mdl-textfield__input" type="text" id="email"/>
           <label class="mdl-textfield__label" for="sample3">Username</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="email" required/>
+          <input class="mdl-textfield__input" type="password" id="password"/>
           <label class="mdl-textfield__label" for="sample3">Email</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="password" id="password" required/>
+          <input class="mdl-textfield__input" type="password" id="password"/>
           <label class="mdl-textfield__label" for="sample3">Password</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="password" id="password" required/>
+          <input class="mdl-textfield__input" type="password" id="password"/>
           <label class="mdl-textfield__label" for="sample3">Confirm Password</label>
         </div>
         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
           <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" />
-          <span class="mdl-checkbox__label">Remember Me</span>
+          <span class="mdl-checkbox__label" style="font-size:12px">Remember me</span>
         </label>
       </form>
     </div>
-    <div class="mdl-card__actions mdl-card--border">
+    <div class="mdl-card__actions mdl-card--border" style="padding:16px">
       <div class="action-part">
-        <a id="create-account-button" class="mdl-button snap-button snap-button--filled">
+        <a href="#" id="create-account-button" class="mdl-button snap-button snap-button--filled">
           Create Account
         </a>
       </div>
@@ -195,33 +158,34 @@
     <div class="snap-forgot-password-card mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title">
       <div class="title-part">
-        <i class="material-icons" style="font-size: 8rem">lock</i>
+        <i class="material-icons" style="font-size: 5rem; padding-top: 20px; color: #3a3d3f">lock</i>
       </div>
       <div class="title-part">
-        <h2 class="mdl-card__title-text" style="display: block">Recover Password</h2>
+        <h2 class="mdl-card__title-text" style="display: block; color: #3a3d3f">Recover Password</h2>
       </div>
     </div>
-    <div class="mdl-card__supporting-text">
+    <div class="mdl-card__supporting-text" style="padding-top:15px; padding-bottom:25px">
       <form action="#">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="username" required/>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-bottom: 15px">
+          <input class="mdl-textfield__input" type="username" id="username"/>
           <label class="mdl-textfield__label" for="sample3">Username</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="email" required/>
+          <input class="mdl-textfield__input" type="text" id="email"/>
           <label class="mdl-textfield__label" for="sample3">Email</label>
         </div>
       </form>
     </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <div class="action-part">
-        <a id="recover-password-button" class="mdl-button snap-button snap-button--filled">
+    <div class="mdl-card__actions" style="padding:16px">
+      <div class="action-part" style="padding-bottom:25px">
+        <a href="#" id="recover-password-button" class="mdl-button snap-button snap-button--filled">
           Recover Password
         </a>
       </div>
     </div>
     </div>
   </div>
+
 
   <div class="mdl-grid snap-grid">
     <div class="mdl-layout__content snap-layout-content">
