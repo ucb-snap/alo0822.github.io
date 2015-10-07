@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('.snap-featured-projects').slick({
     dots: true,
-    infinite: true,
+    infinite: false,
     slidesToShow: 4,
     slidesToScroll: 4,
     responsive: [
@@ -10,7 +10,7 @@ $(document).ready(function(){
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
-          infinite: true,
+          infinite: false,
           dots: true
         }
       },
