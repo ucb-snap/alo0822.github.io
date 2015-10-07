@@ -31,7 +31,7 @@ a img{
 }
 
 ::selection {
-  background-color: #6ab344;
+  background-color: rgb(33,150,243);
   color: #fff;
 }
 
@@ -85,7 +85,7 @@ a img{
   background: #4a6bd6;
 }
   .snap-button--filled:hover {
-    background-color: #4a6bd6; 
+    background-color: #4a6bd6;
     opacity: 0.85;
   }
 
@@ -113,6 +113,7 @@ a img{
 
   .snap-navigation-container {
     /* Simple hack to make the overflow happen to the left instead... */
+    display: inline-block;
     direction: ltr;
     order: 1;
     width: 500px;
@@ -169,6 +170,38 @@ a img{
   background-size: cover;
 }
 
+.snap-sign-in {
+  display:none;
+  position: absolute;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 500
+}
+
+.snap-sign-in-card.mdl-card {
+  margin: 100px auto;
+  width: 360px;
+  height: 460px;
+}
+.snap-sign-in-card > .mdl-card__title {
+  margin: 0 auto;
+  display: block;
+}
+.snap-sign-in-card > .mdl-card__title > .title-part {
+  text-align: center;
+}
+.snap-sign-in-card > .mdl-card__actions {
+  margin: 0 auto;
+  display: block;
+}
+.snap-sign-in-card > .mdl-card__actions > .action-part {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
 .snap-font {
   font-family: 'Roboto', sans-serif;
   line-height: 1;
@@ -191,7 +224,7 @@ a img{
   margin-top: 3em;
 }
   .snap-try-button:hover {
-    background-color: #4a6bd6; 
+    background-color: #4a6bd6;
     opacity: 1;
   }
 
@@ -478,4 +511,8 @@ a img{
 .snap-layout-content {
   background-color: #fbfbfb;
   foreground-color: black;
+}
+
+.slick-arrow {
+  color: #4a6bd6;
 }
