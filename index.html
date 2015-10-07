@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Build your own block!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>Snap!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="./js/manifest.json">
+    <link rel="stylesheet" type="text/css" href="slick-1.5.7/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick-1.5.7/slick/slick-theme.css"/>
+
+    <script src="./js/material.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick-1.5.7/slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/my-slick.js"></script>
+
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+
+  </head>
+
+  <body bgcolor="#fbfbfb">
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <div class="snap-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row snap-layout-header-row">
+          <span class="snap-title mdl-layout-title">
+            <img class="snap-logo-image" src="images/snap-logo.png">
+          </span>
+
+          <div class="snap-navigation-container">
+            <nav class="snap-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Run</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Community</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Extensions</a>
+
+            <div class="snap-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+              <label class="mdl-button mdl-js-button mdl-button--icon snap-search-icon-size" for="search-field">
+                <i class="material-icons">search</i>
+              </label>
+              <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" id="search-field" />
+              </div>
+            </div>
+            </nav>
+          </div>  
+           <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="mdl-layout-spacer"></div>
+          <a class="mdl-button snap-button snap-button--filled" href="">Sign In</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="mdl-grid snap-grid">
+    <div class="mdl-layout__content snap-layout-content">
+      <a name="top"></a>
+        <div class="snap-banner-section mdl-typography--text-center">
+        <div class="snap-font snap-slogan">Snap!</div>
+        <div class="snap-font snap-sub-slogan mdl-typography--font-light">A blocks-based language for computer scientists.</div>
+        <a class="mdl-button snap-button snap-button--filled snap-try-button" href="http://snap.berkeley.edu/run">Try it now!</a>
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+  #snap-featured-card.mdl-card {
+    width: 210px !important;
+    height: 250px;
+    background: #eaeaea;
+  }
+
+  #snap-featured-card > .mdl-card__media {
+    background-color: #eaeaea;
+    width: 130px;
+    border: 0;
+    margin: 40px;
+  }
+
+  #snap-featured-card > .mdl-card__title {
+    padding: 0;
+    text-align: center;
+    color: #3a3d3f;
+  }
+
+/*  #snap-featured-card > .mdl-card__title-text {
+    padding-bottom: 0 !important;
+    text-align: center;
+  }
+
+  #snap-featured-card > .mdl-card__supporting-text {
+    color: #838c8e;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    font-weight: 300;
+  }*/
+  </style>
+
+
+  <div class="mdl-grid snap-card-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+
+      <div class="snap-featured-section mdl-typography--text-center">
+        <div class="featured"></div>
+        <div class="mdl-typography--text-uppercase mdl-typography--font-medium snap-featured-title">Featured Projects</div>
+        <div class="snap-featured-projects">
+
+          <div>
+            <div id="snap-featured-card" class="mdl-card mdl-shadow--1dp">
+              <div class="mdl-card__media"><img src="images/funny face.png" width="100%">
+              </div>
+  <!--             <div class="mdl-card__title mdl-card--expand">
+                <div class="mdl-card__title-text snap-featured-card-title-text">Funny Face</div>
+              </div> -->
+              <div class="mdl-card__supporting-text snap-featured-card-title-text">
+                Funny Face
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-subtitle-text">
+                Author: username
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div id="snap-featured-card" class="mdl-card mdl-shadow--1dp">
+              <div class="mdl-card__media"><img src="images/jurassic park.png" width="100%">
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-title-text">
+                Jurassic Park
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-subtitle-text">
+                Author: username
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div id="snap-featured-card" class="mdl-card mdl-shadow--1dp">
+              <div class="mdl-card__media"><img src="images/kanon.png" width="100%">
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-title-text">
+                Kanon
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-subtitle-text">
+                Author: username
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div id="snap-featured-card" class="mdl-card mdl-shadow--1dp">
+              <div class="mdl-card__media"><img src="images/math trainer.png" width="100%">
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-title-text">
+                Math Trainer
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-subtitle-text">
+                Author: username
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div id="snap-featured-card" class="mdl-card mdl-shadow--1dp">
+              <div class="mdl-card__media"><img src="images/splotches.png" width="100%">
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-title-text">
+                Splotches
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-subtitle-text">
+                Author: username
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  </body>
+</html>

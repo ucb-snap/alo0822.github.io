@@ -1,0 +1,57 @@
+
+.snap-converted-card {
+  width: 170px;
+  height: 250px;
+  background: #eaeaea;
+}
+
+/*  .snap-converted-card .mdl-card__subtitle-text {
+    color: #3a3d3f;
+  }*/
+
+  .snap-converted-card .mdl-card__media {
+    overflow: hidden;
+    background: transparent;
+  }
+
+    .snap-converted-card .mdl-card__media img {
+      width: 60%;
+    }
+
+  .snap-converted-card  mdl-card__title {
+    background: transparent;
+    height: auto;
+  }
+
+  .snap-converted-card mdl-card__title-text {
+    color: #3a3d3f;
+    font-size: 1em;
+    font-weight: 400;
+    height: auto;
+  }
+
+  .snap-converted-card mdl-card__supporting-text {
+    height: auto;
+    color: #3a3d3f;
+    font-size: 0.7em;
+    /*padding-bottom: ;*/
+  }
+
+/*  .snap-converted-card .mdl-card__actions {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .snap-converted-card  .mdl-card__actions a {
+    border-top: none;
+    line-height: 32px;
+    font-size: 16px;
+  }*/
+
+.snap-converted-card-title {
+  font-size: 1em;
+}
+
+.snap-converted-card-author {
+  font-size: 0.7em;
+}

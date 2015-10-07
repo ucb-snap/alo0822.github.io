@@ -1,0 +1,481 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
+
+::-moz-selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+::selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+.snap-grid {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.snap-card-grid {
+  margin-left: 155px;
+  margin-right: 155px;
+}
+
+.snap-search-box .mdl-textfield__input {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.snap-header .mdl-menu__container {
+  z-index: 50;
+  margin: 0 !important;
+}
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+.snap-mobile-title {
+  display: none !important;
+}
+
+.snap-logo-image {
+  height: 41px;
+  width: 74px;
+  padding-right: 30px;
+}
+
+.snap-button {
+  color: #4a6bd6;
+  text-transform: none;
+  font-family: 'Roboto' sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+  .snap-button:hover {
+    background-color: transparent;
+    opacity: 0.85;
+  }
+
+.snap-button--filled {
+  color: white;
+  background: #4a6bd6;
+}
+  .snap-button--filled:hover {
+    background-color: #4a6bd6; 
+    opacity: 0.85;
+  }
+
+.snap-header {
+  overflow: visible;
+  background-color: white;
+  position: fixed;
+  top: 0;
+}
+
+  .snap-header .material-icons {
+    color: #767777 !important;
+  }
+
+  .snap-header .mdl-layout__header {
+    padding: 0 40px 0 80px;
+  }
+
+  .snap-header .mdl-navigation__link {
+    font-family: 'Roboto', sans-serif;
+    color: #3b3d40;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .snap-navigation-container {
+    /* Simple hack to make the overflow happen to the left instead... */
+    direction: ltr;
+    order: 1;
+    width: 500px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .snap-navigation {
+    /* ... and now make sure the content is actually LTR */
+    direction: ltr;
+    justify-content: flex-start;
+    align-items: center;
+    width: 800px;
+  }
+
+  .snap-search-box.is-focused ~ .snap-navigation-container {
+    opacity: 0;
+    width: 100px;
+  }
+
+  .snap-navigation .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+    padding: 0 16px;
+  }
+
+    .snap-navigation .mdl-navigation__link:hover {
+      border-bottom: 4px solid #4a6bd6;
+    }
+
+  .snap-search-box {
+    order: 2;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .snap-more-button {
+    order: 3;
+  }
+
+.snap-layout-header-row {
+    padding: 0 80px 0 80px;
+  }
+
+.snap-banner-section {
+  position: relative;
+  top: 55px;
+  height: 33em;
+  width: 92em;
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../images/snap-content-banner.jpg') right no-repeat;
+  background-size: cover;
+}
+
+.snap-font {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1;
+  color: white;
+  font-weight: 400;
+}
+
+.snap-slogan {
+  font-size: 4.2em;
+  padding-top: 2em;
+}
+
+.snap-sub-slogan {
+  font-size: 1.8em;
+  padding-top: 0.7em;
+}
+
+.snap-try-button {
+  font-size: 18px;
+  margin-top: 3em;
+}
+  .snap-try-button:hover {
+    background-color: #4a6bd6; 
+    opacity: 1;
+  }
+
+
+.snap-featured-section {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.snap-featured-title {
+  font-size: 1.2em;
+  letter-spacing: 0.02em;
+  padding-bottom: 1.8em;
+  color: #3b3d40;
+}
+
+.snap-featured-card-title-text {
+  padding: 0;
+  color: #3a3d3f;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.snap-featured-card-subtitle-text {
+  color: #838c8e;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  font-weight: 300;
+}
+
+
+
+.featured {
+  text-align: right;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.snap-featured {
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.snap-featured .snap-link {
+  margin-top: 16px;
+  display: block;
+  z-index: 2;
+}
+
+.snap-featured-image {
+  text-decoration: none;
+}
+
+/*.snap-featured-title {
+  font-family: 'Roboto' sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3a3d3f;
+}*/
+
+/*.snap-featured-card {
+  width: 170px !important;
+  height: 300px;
+  background: #eaeaea;
+}
+
+  .snap-featured-card .mdl-card__title {
+    font-family: 'Roboto' sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #3a3d3f;
+  }
+
+  .snap-featured-card .mdl-card__media {
+    width: 20px !important;
+    height: 20px!important;
+    border: 0;
+    padding: 20px;
+  }*/
+
+.snap-link {
+  text-decoration: none;
+  color: #8bc34a !important;
+}
+
+  .snap-link:hover {
+    color: #7cb342 !important;
+  }
+
+  .snap-link .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+.snap-alt-link {
+  text-decoration: none;
+  color: #64ffda !important;
+  font-size: 16px;
+}
+
+  .snap-alt-link:hover {
+    color: #00bfa5 !important;
+  }
+
+  .snap-alt-link .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+
+.snap-card-container {
+}
+
+  .snap-card-container .mdl-card__media {
+    overflow: hidden;
+    background: transparent;
+  }
+
+    .snap-card-container .mdl-card__media img {
+      width: 100%;
+    }
+
+  .snap-card-container .mdl-card__title {
+    background: transparent;
+    height: auto;
+  }
+
+  .snap-card-container .mdl-card__title-text {
+    color: black;
+    height: auto;
+  }
+
+  .snap-card-container .mdl-card__supporting-text {
+    height: auto;
+    color: black;
+    padding-bottom: 48px;
+  }
+
+  .snap-card-container .mdl-card__actions {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .snap-card-container .mdl-card__actions a {
+    border-top: none;
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+.snap-footer {
+  background-color: #fafafa;
+  position: relative;
+}
+
+  .snap-footer a:hover {
+    color: #8bc34a;
+  }
+
+  .snap-footer .mdl-mega-footer--top-section::after {
+    border-bottom: none;
+  }
+
+  .snap-footer .mdl-mega-footer--middle-section::after {
+    border-bottom: none;
+  }
+
+  .snap-footer .mdl-mega-footer--bottom-section {
+    position: relative;
+  }
+
+  .snap-footer .mdl-mega-footer--bottom-section a {
+    margin-right: 2em;
+  }
+
+  .snap-footer .mdl-mega-footer--right-section a .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+
+.snap-link-menu:hover {
+  cursor: pointer;
+}
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+  .snap-navigation-container {
+    display: none;
+  }
+
+  .snap-title {
+    display: none !important;
+  }
+
+  .snap-mobile-title {
+    display: block !important;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 12px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .snap-search-box.is-focused ~ .snap-mobile-title {
+    opacity: 0;
+  }
+
+  .snap-more-button {
+    display: none;
+  }
+
+  .snap-search-icon-size {
+    font-size: 10px;
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+  }
+
+  .snap-search-box.is-focused {
+    width: calc(100% - 48px);
+  }
+
+  .snap-search-box .mdl-textfield__expandable-holder {
+    width: 100%;
+  }
+
+  .snap-banner-section {
+    height: 350px;
+  }
+
+  .snap-slogan {
+    font-size: 26px;
+    margin: 0 16px;
+    padding-top: 24px;
+  }
+
+  .snap-sub-slogan {
+    font-size: 16px;
+    margin: 0 16px;
+    padding-top: 8px;
+  }
+
+  .snap-create-character {
+    padding-top: 200px;
+    font-size: 16px;
+  }
+
+  .snap-create-character img {
+    height: 12px;
+  }
+
+  .snap-fab {
+    display: none;
+  }
+
+  .snap-wear-band-text {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .snap-footer .mdl-mega-footer--bottom-section {
+    display: none;
+  }
+
+.snap-title-spacer .mdl-layout-spacer {
+  width: 5px;
+  -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+      flex-grow: 1; }
+}
+
+.snap-right-spacer .mdl-layout-spacer {
+  -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+      flex-grow: 1; }
+}
+
+.snap-layout-content {
+  background-color: #fbfbfb;
+  foreground-color: black;
+}
