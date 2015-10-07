@@ -202,6 +202,70 @@ a img{
   text-align: center;
 }
 
+.snap-sign-up {
+  display:none;
+  position: absolute;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 500
+}
+
+.snap-sign-up-card.mdl-card {
+  margin: 100px auto;
+  width: 360px;
+  height: 540px;
+}
+.snap-sign-up-card > .mdl-card__title {
+  margin: 0 auto;
+  display: block;
+}
+.snap-sign-up-card > .mdl-card__title > .title-part {
+  text-align: center;
+}
+.snap-sign-up-card > .mdl-card__actions {
+  margin: 0 auto;
+  display: block;
+}
+.snap-sign-up-card > .mdl-card__actions > .action-part {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.snap-forgot-password {
+  display:none;
+  position: absolute;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 500
+}
+
+.snap-forgot-password-card.mdl-card {
+  margin: 100px auto;
+  width: 360px;
+  height: 360px;
+}
+.snap-forgot-password-card > .mdl-card__title {
+  margin: 0 auto;
+  display: block;
+}
+.snap-forgot-password-card > .mdl-card__title > .title-part {
+  text-align: center;
+}
+.snap-forgot-password-card > .mdl-card__actions {
+  margin: 0 auto;
+  display: block;
+}
+.snap-forgot-password-card > .mdl-card__actions > .action-part {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
 .snap-font {
   font-family: 'Roboto', sans-serif;
   line-height: 1;
