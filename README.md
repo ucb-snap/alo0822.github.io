@@ -7,6 +7,8 @@ HTML and CSS mockup of the new website design for the Snap! website.
 
 - Fixed header
 
+- Footer
+
 - Photo banner
 
 - Static buttons/links
@@ -36,8 +38,6 @@ HTML and CSS mockup of the new website design for the Snap! website.
 
 
 ## Planned features
-
-- Footer
 
 - Student and instructor profiles
 
