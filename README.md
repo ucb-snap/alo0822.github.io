@@ -4,7 +4,10 @@ HTML and CSS mockup of the new website design for the Snap! website.
 
 
 ## Current features
+
 - Fixed header
+
+- Footer
 
 - Photo banner
 
@@ -12,29 +15,29 @@ HTML and CSS mockup of the new website design for the Snap! website.
 
 - Featured projects carousel
 
+- Sign in, Recover Password, and Create Account cards
+
 
 ## Issues to fix
 
-- Highlight color
+- Banner scroll when page loads
+
+- Update highlight color to Snap! blue
 
 - Inconsistent spacing on different browsers/computers
 
 - Carousel arrow appearance
 
+- Carousel inconsistent padding/margins
+
 - Spacing for Featured Projects card info
 
 - Location of carousel dots
 
-- Link for "Try it now!" button
+- Fix "Remember me" button in Create Account card
 
 
 ## Planned features
-
-- Footer
-
-- Sign in and sign up Page
-
-- Link Run to http://snap.berkeley.edu/run
 
 - Student and instructor profiles
 
