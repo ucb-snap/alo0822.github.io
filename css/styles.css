@@ -163,10 +163,13 @@ a img{
 
 .snap-banner-section {
   position: relative;
-  top: 55px;
-  height: 33em;
-  width: 92em;
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../images/snap-content-banner.jpg') right no-repeat;
+  top: 64px;
+  width: 100%;
+  height: auto;
+  padding-top: 8em;
+  padding-bottom: 8em;
+  margin-bottom: 2em;
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../images/snap-content-banner.jpg') center no-repeat;
   background-size: cover;
 }
 
@@ -288,7 +291,6 @@ a img{
 
 .snap-slogan {
   font-size: 4.2em;
-  padding-top: 2em;
 }
 
 .snap-sub-slogan {
@@ -462,9 +464,26 @@ a img{
   cursor: pointer;
 }
 
+/* Adjusts banner when header height switches */
+@media(max-width:1024px) {
+  .snap-banner-section {
+    top: 56px;
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+  
+  .snap-slogan {
+    font-size: 3.6em;
+  }
+
+  .snap-sub-slogan {
+    font-size: 1.5em;
+    padding-top: 0.6em;
+  }
+}
 
 /**** Mobile layout ****/
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .snap-navigation-container {
     display: none;
   }
@@ -495,6 +514,11 @@ a img{
     width: 20px;
     min-width: 20px;
   }
+  
+  .snap-banner-section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
 
   .snap-search-box.is-focused {
     width: calc(100% - 48px);
@@ -504,14 +528,9 @@ a img{
     width: 100%;
   }
 
-  .snap-banner-section {
-    height: 350px;
-  }
-
   .snap-slogan {
     font-size: 26px;
     margin: 0 16px;
-    padding-top: 24px;
   }
 
   .snap-sub-slogan {
