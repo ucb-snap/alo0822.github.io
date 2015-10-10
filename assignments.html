@@ -193,10 +193,16 @@
         <div class="course-title">The Beauty and Joy of Computing</div>
         <hr>
         <div class="course-info-h3">Instructors</div>
-        <div class="instructor-item"><span class="instructor-icon">:)</span><span class="course-info-h4">Instructor 1</span></div>
-        <div class="instructor-item"><span class="instructor-icon">:)</span><span class="course-info-h4">Instructor 2</span></div>
+        <div class="instructor-item">
+          <span class="instructor-icon"><i class="material-icons">mood</i></span>
+          <span class="course-info-h4">Instructor 1</span>
+        </div>
+        <div class="instructor-item">
+          <span class="instructor-icon"><i class="material-icons">mood</i></span>
+          <span class="course-info-h4">Instructor 2</span>
+        </div>
         <hr>
-        <div class="course-info-h4">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli</div>
+        <div class="course-info-h4">Eu eos sumo nibh solet, ne nec quando explicari consequat. Possit assueverit quo at, per te eirmod veritus signiferumque, meliore consectetuer sea eu. Ei eos persecuti vituperata, ei ignota oporteat erroribus sed. Eu has denique reprehendunt, no sit minim doctus assentior, an sed tempor voluptua vituperatoribus. Ad dicit mundi solet vix, prompta adipisci hendrerit et est. Ad odio laudem voluptatum vim</div>
       </div>
     </div>
   </div>
@@ -228,6 +234,7 @@
               <td class="inactive">Submitted</td>
               <td>Due Date</td>
             </tr>
+            <tr>
               <td>Homework 1</td>
               <td class="disabled">Closed</td>
               <td>Due Date</td>
@@ -236,12 +243,38 @@
         </table>
       </div>
       <div class="mdl-tabs__panel" id="participants-panel">
-        <ul>
-          <li>Tywin</li>
-          <li>Cersei</li>
-          <li>Jamie</li>
-          <li>Tyrion</li>
-        </ul>
+        <div class="student-list">
+          <div class="student-item">
+            <div class="student-icon-container">
+              <img src="images/funny face.png">
+            </div>
+            <div class="delete-icon">&times;</div>
+            Student 1
+          </div>
+          <div class="student-item">
+            <div class="student-icon-container">
+              <img src="images/funny face.png">
+            </div>
+            <div class="delete-icon">&times;</div>
+            Student 2
+          </div>
+        </div>
+        <div class="student-list">
+          <div class="student-item">
+            <div class="student-icon-container">
+              <img src="images/funny face.png">
+            </div>
+            <div class="delete-icon">&times;</div>
+            Student 3
+          </div>
+          <div class="student-item">
+            <div class="student-icon-container">
+              <img src="images/funny face.png">
+            </div>
+            <div class="delete-icon">&times;</div>
+            Student 4
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -249,7 +282,7 @@
 
 <style>
 .assignment-section {
-  margin: 72px 0px;
+  margin: 96px 0px;
   font-family: Roboto;
 }
 .assignment-section .course-info-container {
@@ -257,7 +290,7 @@
 .assignment-section .course-info-card {
   background: #DEDEDE;
   border-radius: 6px;
-  max-width: 60%;
+  max-width: 80%;
   margin: 0px auto;
   padding: 5%;
   line-height: 1.3;
@@ -279,8 +312,12 @@
 .assignment-section .course-info-h4 {
   font-size: 1em;
 }
+.assignment-section .instructor-item {
+  display: flex;
+  align-items: center; /* align vertical */
+}
 .assignment-section .instructor-icon {
-  padding: 8px;
+  margin: 4px;
 }
 
 table.assignments-table {
@@ -295,7 +332,7 @@ table.assignments-table {
   color: #AAA;
   text-align: left;
   border-bottom: 2px solid #DEDEDE;
-  height: 32px;
+  height: 36px;
 }
 .assignments-table td:nth-child(1) {
   font-weight: 500;
@@ -309,6 +346,42 @@ table.assignments-table {
 }
 .assignments-table td:nth-child(2).disabled {
   color: #BEBEBE;
+}
+
+.assignment-section .student-list {
+  width: 45%;
+  position: relative;
+  left: 6%;
+  display: inline-block;
+}
+.assignment-section .student-icon-container {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0px 8px;
+}
+.assignment-section .student-icon-container img {
+  width: 100%;
+  height: 100%;
+}
+.assignment-section .delete-icon {
+  position: relative;
+  left: -62px;
+  top: -18px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+.assignment-section .student-item {
+  margin: 12px 0px;
+  display: flex;
+  align-items: center; /* align vertical */ 
 }
 </style>
 
