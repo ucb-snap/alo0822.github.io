@@ -166,8 +166,8 @@ a img{
   top: 64px;
   width: 100%;
   height: auto;
-  padding-top: 8em;
-  padding-bottom: 8em;
+  padding-top: 12em;
+  padding-bottom: 12em;
   margin-bottom: 2em;
   background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../images/snap-content-banner.jpg') center no-repeat;
   background-size: cover;
@@ -464,12 +464,19 @@ a img{
   cursor: pointer;
 }
 
+@media(max-width:1300px) {
+    .snap-banner-section {
+        padding-top: 9em;
+        padding-bottom: 9em;
+    }
+}
+
 /* Adjusts banner when header height switches */
 @media(max-width:1024px) {
   .snap-banner-section {
     top: 56px;
-    padding-top: 5em;
-    padding-bottom: 5em;
+    padding-top: 6em;
+    padding-bottom: 6em;
   }
   
   .snap-slogan {
