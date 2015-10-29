@@ -210,8 +210,9 @@
   <div class="mdl-cell mdl-cell--9-col">
     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
       <div class="mdl-tabs__tab-bar">
-        <a href="#assignments-panel" class="mdl-tabs__tab is-active">Assignments</a>
-        <a href="#participants-panel" class="mdl-tabs__tab">Participants</a>
+        <a href="#assignments-panel" class="mdl-tabs__tab is-active">Assignments <span class="tab-count assignment-count">3</span></a>
+        <a href="#participants-panel" class="mdl-tabs__tab">Participants <span class="tab-count participants-count">5</span></a>
+        <a class="create-assignment-button mdl-button snap-button snap-button--filled" href="#">+ Create Assignment</a>
       </div>
 
       <div class="mdl-tabs__panel is-active" id="assignments-panel">
@@ -320,6 +321,41 @@
   margin: 4px;
 }
 
+.mdl-tabs__tab-bar {
+  justify-content: flex-start;
+  padding-left: 20px;
+  height: 38px;
+}
+.mdl-tabs__tab {
+  height: 38px;
+  line-height: 42px;
+}
+.mdl-tabs__tab.is-active {
+  border: 1px solid #e0e0e0;
+  border-bottom: 1px solid rgb(251, 251, 251);
+  border-radius: 8px 8px 0 0;
+}
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+  background: rgb(251, 251, 251);
+}
+.tab-count {
+  color: #777;
+  margin: 0px 4px;
+  font-weight: 300;
+}
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+ /* -webkit-animation: none;
+  animation: none;
+  -webkit-transition: none;
+  transition: none;*/
+}
+.create-assignment-button {
+  margin-left: auto;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 6px;
+}
+
 table.assignments-table {
   width: 100%;
   border-collapse: collapse;
@@ -334,10 +370,12 @@ table.assignments-table {
   border-bottom: 2px solid #DEDEDE;
   height: 36px;
 }
+/* homework names */
 .assignments-table td:nth-child(1) {
   font-weight: 500;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
+/* status and due date */
 .assignments-table td:nth-child(2), td:nth-child(3) {
   font-size: 1.2em;
 }
