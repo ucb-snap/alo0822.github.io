@@ -236,7 +236,7 @@
               <td>Due Date</td>
             </tr>
             <tr>
-              <td>Homework 1</td>
+              <td><div class="edit-homework">Homework 1<span class="edit-homework-icon">E</span></div></td>
               <td class="disabled">Closed</td>
               <td>Due Date</td>
             </tr>
@@ -370,10 +370,27 @@ table.assignments-table {
   border-bottom: 2px solid #DEDEDE;
   height: 36px;
 }
+.assignments-table th:nth-child(1) {
+  padding-left: 20px;
+}
 /* homework names */
 .assignments-table td:nth-child(1) {
   font-weight: 500;
   font-size: 1.3em;
+  padding-left: 20px;
+}
+.assignments-table .edit-homework {
+  width: 80%;
+  background: #E3E3E3;
+  padding: 10px;
+  margin-left: -10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+}
+.assignments-table .edit-homework-icon {
+  float: right;
+  color: grey;
 }
 /* status and due date */
 .assignments-table td:nth-child(2), td:nth-child(3) {
@@ -415,6 +432,9 @@ table.assignments-table {
   width: 18px;
   text-align: center;
   cursor: pointer;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 0.75;
 }
 .assignment-section .student-item {
   margin: 12px 0px;
