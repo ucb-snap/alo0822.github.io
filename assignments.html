@@ -186,7 +186,7 @@
   </div>
 
 <section class="mdl-grid assignment-section">
-  <div class="mdl-cell mdl-cell--3-col">
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
     <div class="course-info-container">
       <div class="course-info-card">
         <div class="course-code">CS10</div>
@@ -207,11 +207,12 @@
     </div>
   </div>
 
-  <div class="mdl-cell mdl-cell--9-col">
+  <div class="mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
       <div class="mdl-tabs__tab-bar">
-        <a href="#assignments-panel" class="mdl-tabs__tab is-active">Assignments <span class="tab-count assignment-count">3</span></a>
+        <a href="#assignments-panel" class="mdl-tabs__tab is-active">Assignments <span class="tab-count assignments-count">3</span></a>
         <a href="#participants-panel" class="mdl-tabs__tab">Participants <span class="tab-count participants-count">5</span></a>
+        <a href="#requests-panel" class="mdl-tabs__tab">Requests<span class="tab-count requests-count">1</span></a>
         <a class="create-assignment-button mdl-button snap-button snap-button--filled" href="#">+ Create Assignment</a>
       </div>
 
@@ -244,6 +245,9 @@
         </table>
       </div>
       <div class="mdl-tabs__panel" id="participants-panel">
+        <div class="student-actions">
+          <span class="add-student-icon">+</span>
+        </div>
         <div class="student-list">
           <div class="student-item">
             <div class="student-icon-container">
@@ -274,6 +278,18 @@
             </div>
             <div class="delete-icon">&times;</div>
             Student 4
+          </div>
+        </div>
+      </div>
+      <div class="mdl-tabs__panel" id="requests-panel">
+        <div class="student-list">
+          <div class="student-item">
+            <div class="student-icon-container">
+              <img src="images/funny face.png">
+            </div>
+            Student 1
+            <span class="accept-student-icon">V</span>
+            <span class="reject-student-icon">&times;</span>
           </div>
         </div>
       </div>
@@ -321,6 +337,10 @@
   margin: 4px;
 }
 
+.mdl-tabs {
+  padding-right: 20px;
+}
+
 .mdl-tabs__tab-bar {
   justify-content: flex-start;
   padding-left: 20px;
@@ -351,6 +371,7 @@
 }
 .create-assignment-button {
   margin-left: auto;
+  margin-right: 20px;
   height: 30px;
   line-height: 30px;
   border-radius: 6px;
@@ -436,11 +457,52 @@ table.assignments-table {
   font-weight: 300;
   line-height: 0.75;
 }
+/* participants tab */
 .assignment-section .student-item {
   margin: 12px 0px;
   display: flex;
   align-items: center; /* align vertical */ 
 }
+#participants-panel .add-student-icon {
+  float: right;
+  font-size: 36px;
+  color: lightgrey;
+  border: 2px solid lightgrey;
+  border-radius: 50%;
+  width: 30px;
+  text-align: center;
+  margin: 5px;
+  margin-right: 20px;
+  height: 30px;
+  line-height: 0.85;
+  font-weight: 300;
+}
+#requests-panel .accept-student-icon {
+  font-size: 20px;
+  color: lightblue;
+  border: 2px solid lightblue;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  margin: 5px;
+  margin-left: 12px;
+  line-height: 1.2;
+  font-weight: 300;
+}
+#requests-panel .reject-student-icon {
+  font-size: 28px;
+  color: lightgrey;
+  border: 2px solid lightgrey;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  margin: 5px;
+  line-height: 0.8;
+  font-weight: 300;
+}
+
 </style>
 
   <footer class="mdl-mega-footer snap-footer">
