@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Build your own block!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>Snap!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="./js/manifest.json">
+    <link rel="stylesheet" type="text/css" href="slick-1.5.7/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick-1.5.7/slick/slick-theme.css"/>
+
+    <script src="./js/material.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick-1.5.7/slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/my-slick.js"></script>
+    <script type="text/javascript" src="js/snap-scripts.js"></script>
+
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+
+  <body bgcolor="#fbfbfb">
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <div class="snap-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row snap-layout-header-row">
+          <span class="snap-title mdl-layout-title">
+            <a href="index.html"><img class="snap-logo-image" src="images/snap-logo.png"></a>
+            <div class="snap-navigation-container">
+              <nav class="snap-navigation mdl-navigation">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">About Us</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Community</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://snap.berkeley.edu/run">Run</a>
+
+              <div class="snap-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+                <label class="mdl-button mdl-js-button mdl-button--icon snap-search-icon-size" for="search-field">
+                  <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                  <input class="mdl-textfield__input" type="text" id="search-field" />
+                </div>
+              </div>
+              </nav>
+            </div>
+          </span>
+           <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="mdl-layout-spacer"></div>
+          <a id="sign-in" class="mdl-button snap-button snap-button--filled" href="#">Sign in</a>
+        </div>
+      </div>
+    </div>
+
+
+  <div id="sign-in-form" class="snap-sign-in">
+    <div class="snap-sign-in-card mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <div class="title-part">
+        <i class="material-icons" style="font-size: 5rem; padding-top: 20px; color: #3a3d3f">account_circle</i>
+      </div>
+      <div class="title-part">
+        <h2 class="mdl-card__title-text" style="display: block; color: #3a3d3f">Sign In</h2>
+      </div>
+    </div>
+    <div class="mdl-card__supporting-text" style="padding-top:10px; padding-bottom:25px">
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-bottom: 15px">
+          <input class="mdl-textfield__input" type="text" id="email"/>
+          <label class="mdl-textfield__label" for="sample3">Email</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" id="password"/>
+          <label class="mdl-textfield__label" for="sample3">Password</label>
+        </div>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+          <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" />
+          <span class="mdl-checkbox__label" style="font-size:12px">Remember me</span>
+        </label>
+      </form>
+    </div>
+    <div class="mdl-card__actions mdl-card--border" style="padding:16px">
+      <div class="action-part" style="padding-bottom:25px">
+        <a href="#" id="forgot-password" class="snap-sign-in-link" style="padding-right:10px">Forgot password?</a>
+        <a href="#" id="sign-up" class="snap-sign-in-link" style="padding-left:10px">Create Account</a>
+      </div>
+      <div class="action-part">
+        <a href="#" id="sign-in-button" class="mdl-button snap-button snap-button--filled">
+          Sign in
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div id="sign-up-form" class="snap-sign-up">
+    <div class="snap-sign-up-card mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <div class="title-part">
+        <i class="material-icons" style="font-size: 5rem; padding-top: 20px; color: #3a3d3f">account_circle</i>
+      </div>
+      <div class="title-part">
+        <h2 class="mdl-card__title-text" style="display: block; color: #3a3d3f">Create Account</h2>
+      </div>
+    </div>
+    <div class="mdl-card__supporting-text" style="padding-top:10px; padding-bottom:25px">
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-bottom: 15px">
+          <input class="mdl-textfield__input" type="text" id="email"/>
+          <label class="mdl-textfield__label" for="sample3">Username</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" id="password"/>
+          <label class="mdl-textfield__label" for="sample3">Email</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" id="password"/>
+          <label class="mdl-textfield__label" for="sample3">Password</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" id="password"/>
+          <label class="mdl-textfield__label" for="sample3">Confirm Password</label>
+        </div>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+          <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" />
+          <span class="mdl-checkbox__label" style="font-size:12px">Remember me</span>
+        </label>
+      </form>
+    </div>
+    <div class="mdl-card__actions mdl-card--border" style="padding:16px">
+      <div class="action-part">
+        <a href="#" id="create-account-button" class="mdl-button snap-button snap-button--filled">
+          Create Account
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div id="forgot-password-form" class="snap-forgot-password">
+    <div class="snap-forgot-password-card mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <div class="title-part">
+        <i class="material-icons" style="font-size: 5rem; padding-top: 20px; color: #3a3d3f">lock</i>
+      </div>
+      <div class="title-part">
+        <h2 class="mdl-card__title-text" style="display: block; color: #3a3d3f">Recover Password</h2>
+      </div>
+    </div>
+    <div class="mdl-card__supporting-text" style="padding-top:15px; padding-bottom:25px">
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-bottom: 15px">
+          <input class="mdl-textfield__input" type="username" id="username"/>
+          <label class="mdl-textfield__label" for="sample3">Username</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="email"/>
+          <label class="mdl-textfield__label" for="sample3">Email</label>
+        </div>
+      </form>
+    </div>
+    <div class="mdl-card__actions" style="padding:16px">
+      <div class="action-part" style="padding-bottom:25px">
+        <a href="#" id="recover-password-button" class="mdl-button snap-button snap-button--filled">
+          Recover Password
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<section class="mdl-grid assignment-section">
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    <div class="course-info-container">
+      <div class="course-info-card">
+        <div class="course-code">CS10</div>
+        <div class="course-title">The Beauty and Joy of Computing</div>
+        <hr>
+        <div class="course-info-h3">Instructors</div>
+        <div class="instructor-item">
+          <span class="instructor-icon"><i class="material-icons">mood</i></span>
+          <span class="course-info-h4">Instructor 1</span>
+        </div>
+        <div class="instructor-item">
+          <span class="instructor-icon"><i class="material-icons">mood</i></span>
+          <span class="course-info-h4">Instructor 2</span>
+        </div>
+        <hr>
+        <div class="course-info-h4">Eu eos sumo nibh solet, ne nec quando explicari consequat. Possit assueverit quo at, per te eirmod veritus signiferumque, meliore consectetuer sea eu. Ei eos persecuti vituperata, ei ignota oporteat erroribus sed. Eu has denique reprehendunt, no sit minim doctus assentior, an sed tempor voluptua vituperatoribus. Ad dicit mundi solet vix, prompta adipisci hendrerit et est. Ad odio laudem voluptatum vim</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+      <div class="mdl-tabs__tab-bar">
+        <a href="#assignments-panel" class="mdl-tabs__tab is-active">Assignments <span class="tab-count assignments-count">3</span></a>
+        <a href="#participants-panel" class="mdl-tabs__tab">Participants <span class="tab-count participants-count">5</span></a>
+        <a href="#requests-panel" class="mdl-tabs__tab">Requests<span class="tab-count requests-count">1</span></a>
+        <a class="create-assignment-button mdl-button snap-button snap-button--filled" href="#">+ Create Assignment</a>
+      </div>
+
+      <div class="mdl-tabs__panel is-active" id="assignments-panel">
+        <table class="assignments-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Due Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Homework 3</td>
+              <td class="active">Not Submitted</td>
+              <td>Due Date</td>
+            </tr>
+            <tr>
+              <td>Homework 2</td>
+              <td class="inactive">Submitted</td>
+              <td>Due Date</td>
+            </tr>
+            <tr>
+              <td><div class="edit-homework">Homework 1<span class="edit-homework-icon">E</span></div></td>
+              <td class="disabled">Closed</td>
+              <td>Due Date</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mdl-tabs__panel" id="participants-panel">
+        <div class="student-actions">
+          <span class="add-student-icon">+</span>
+        </div>
+        <div class="student-list">
+          <div class="student-item">
+            <div class="student-icon-container">
+              <img src="images/funny face.png">
+            </div>
+            <div class="delete-icon">&times;</div>
+            Student 1
+          </div>
+          <div class="student-item">
+            <div class="student-icon-container">
+              <img src="images/funny face.png">
+            </div>
+            <div class="delete-icon">&times;</div>
+            Student 2
+          </div>
+        </div>
+        <div class="student-list">
+          <div class="student-item">
+            <div class="student-icon-container">
+              <img src="images/funny face.png">
+            </div>
+            <div class="delete-icon">&times;</div>
+            Student 3
+          </div>
+          <div class="student-item">
+            <div class="student-icon-container">
+              <img src="images/funny face.png">
+            </div>
+            <div class="delete-icon">&times;</div>
+            Student 4
+          </div>
+        </div>
+      </div>
+      <div class="mdl-tabs__panel" id="requests-panel">
+        <div class="student-list">
+          <div class="student-item">
+            <div class="student-icon-container">
+              <img src="images/funny face.png">
+            </div>
+            Student 1
+            <span class="accept-student-icon">V</span>
+            <span class="reject-student-icon">&times;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.assignment-section {
+  margin: 96px 0px;
+  font-family: Roboto;
+}
+.assignment-section .course-info-container {
+}
+.assignment-section .course-info-card {
+  background: #DEDEDE;
+  border-radius: 6px;
+  max-width: 80%;
+  margin: 0px auto;
+  padding: 5%;
+  line-height: 1.3;
+}
+.assignment-section .course-code {
+  color: #01579B;
+  font-size: 1.7em;
+  margin: 6px 0px;
+}
+.assignment-section .course-title {
+  color: #01579B;
+  font-size: 1em;
+}
+.assignment-section .course-info-h3 {
+  font-size: 1em;
+  font-weight: 700;
+  color: #455A64;
+}
+.assignment-section .course-info-h4 {
+  font-size: 1em;
+}
+.assignment-section .instructor-item {
+  display: flex;
+  align-items: center; /* align vertical */
+}
+.assignment-section .instructor-icon {
+  margin: 4px;
+}
+
+.mdl-tabs {
+  padding-right: 20px;
+}
+
+.mdl-tabs__tab-bar {
+  justify-content: flex-start;
+  padding-left: 20px;
+  height: 38px;
+}
+.mdl-tabs__tab {
+  height: 38px;
+  line-height: 42px;
+}
+.mdl-tabs__tab.is-active {
+  border: 1px solid #e0e0e0;
+  border-bottom: 1px solid rgb(251, 251, 251);
+  border-radius: 8px 8px 0 0;
+}
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+  background: rgb(251, 251, 251);
+}
+.tab-count {
+  color: #777;
+  margin: 0px 4px;
+  font-weight: 300;
+}
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+ /* -webkit-animation: none;
+  animation: none;
+  -webkit-transition: none;
+  transition: none;*/
+}
+.create-assignment-button {
+  margin-left: auto;
+  margin-right: 20px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 6px;
+}
+
+table.assignments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.assignments-table tbody tr {
+  border-bottom: 1px solid #DEDEDE;
+  height: 60px;
+}
+.assignments-table th {
+  color: #AAA;
+  text-align: left;
+  border-bottom: 2px solid #DEDEDE;
+  height: 36px;
+}
+.assignments-table th:nth-child(1) {
+  padding-left: 20px;
+}
+/* homework names */
+.assignments-table td:nth-child(1) {
+  font-weight: 500;
+  font-size: 1.3em;
+  padding-left: 20px;
+}
+.assignments-table .edit-homework {
+  width: 80%;
+  background: #E3E3E3;
+  padding: 10px;
+  margin-left: -10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+}
+.assignments-table .edit-homework-icon {
+  float: right;
+  color: grey;
+}
+/* status and due date */
+.assignments-table td:nth-child(2), td:nth-child(3) {
+  font-size: 1.2em;
+}
+.assignments-table td:nth-child(2).active {
+  color: #01579B;
+}
+.assignments-table td:nth-child(2).disabled {
+  color: #BEBEBE;
+}
+
+.assignment-section .student-list {
+  width: 45%;
+  position: relative;
+  left: 6%;
+  display: inline-block;
+}
+.assignment-section .student-icon-container {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0px 8px;
+}
+.assignment-section .student-icon-container img {
+  width: 100%;
+  height: 100%;
+}
+.assignment-section .delete-icon {
+  position: relative;
+  left: -62px;
+  top: -18px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 0.75;
+}
+/* participants tab */
+.assignment-section .student-item {
+  margin: 12px 0px;
+  display: flex;
+  align-items: center; /* align vertical */ 
+}
+#participants-panel .add-student-icon {
+  float: right;
+  font-size: 36px;
+  color: lightgrey;
+  border: 2px solid lightgrey;
+  border-radius: 50%;
+  width: 30px;
+  text-align: center;
+  margin: 5px;
+  margin-right: 20px;
+  height: 30px;
+  line-height: 0.85;
+  font-weight: 300;
+}
+#requests-panel .accept-student-icon {
+  font-size: 20px;
+  color: lightblue;
+  border: 2px solid lightblue;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  margin: 5px;
+  margin-left: 12px;
+  line-height: 1.2;
+  font-weight: 300;
+}
+#requests-panel .reject-student-icon {
+  font-size: 28px;
+  color: lightgrey;
+  border: 2px solid lightgrey;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  margin: 5px;
+  line-height: 0.8;
+  font-weight: 300;
+}
+
+</style>
+
+  <footer class="mdl-mega-footer snap-footer">
+    <div class="mdl-mega-footer__middle-section">
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">About</h1>
+        <ul class="mdl-mega-footer__link-list mdl-typography--font-light">
+          <li><a href="students.html">For Students</a></li>
+          <li><a href="teachers.html">For Teachers</a></li>
+          <li><a href="parents.html">For Parents</a></li>
+          <li><a href="extensions.html">Extensions</a></li>
+          <li><a href="credits.html">Credits</a></li>
+        </ul>
+      </div>
+
+      <div class="mdl-mega-footer__drop-down-section snap-drop-down">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">Community</h1>
+        <ul class="mdl-mega-footer__link-list">
+          <li><a href="guidelines.html">Guidelines</a></li>
+          <li><a href="forums.html">Forum</a></li>
+          <li><a href="wiki.html">Wiki</a></li>
+        </ul>
+      </div>
+
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">Support</h1>
+        <ul class="mdl-mega-footer__link-list">
+          <li><a href="help.html">Help</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">Legal</h1>
+        <ul class="mdl-mega-footer__link-list">
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="dmca.html">DMCA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mdl-mega-footer__bottom-section">
+      <div class="snap-copyright">SOME SORT OF COPYRIGHT THING © 2015</div>
+    </div>
+  </footer>
+
+
+</html>
